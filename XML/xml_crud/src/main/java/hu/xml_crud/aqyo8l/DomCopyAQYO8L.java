@@ -25,7 +25,7 @@ public class DomCopyAQYO8L {
             Document doc = builder.parse(file);
             doc.getDocumentElement().normalize();
 
-            //Kimeneti fájl inicializálása
+            // Kimeneti fájl inicializálása
             PrintWriter outfile = new PrintWriter(new File("XML\\XMLAQYO8L_Copy.xml"), "UTF-8");
 
             // XML adatok kiírása
@@ -144,8 +144,8 @@ public class DomCopyAQYO8L {
                 printToFileAndConsole("        </Beszallito>", System.out, file);
             }
 
-            printToFileAndConsole("     </Beszallitok>", System.out, file);
         }
+        printToFileAndConsole("     </Beszallitok>", System.out, file);
     }
 
     // Áruház-Beszállító kapcsolatokat beolvasó metódus
@@ -162,7 +162,8 @@ public class DomCopyAQYO8L {
 
                 printToFileAndConsole("     <Aruhaz-Beszallito aruhazid=\"" + aruhazid + "\" beszallitoid=\""
                         + beszallitoid + "\">", System.out, file);
-                printToFileAndConsole("          <Atlagos_Rendelt_Arumennyiseg>"+atlagos_Rendelt_Arumennyiseg+"</Atlagos_Rendelt_Arumennyiseg>", System.out, file);
+                printToFileAndConsole("          <Atlagos_Rendelt_Arumennyiseg>" + atlagos_Rendelt_Arumennyiseg
+                        + "</Atlagos_Rendelt_Arumennyiseg>", System.out, file);
                 printToFileAndConsole("     </Aruhaz-Beszallito>", System.out, file);
             }
         }
@@ -194,31 +195,32 @@ public class DomCopyAQYO8L {
                 printToFileAndConsole("            <Ar penznem=\"" + penznem + "\">" + ar + "</Ar>", System.out, file);
                 printToFileAndConsole("       </Aruhaz_Raktar_Termek>", System.out, file);
             }
-
-            for (int temp2 = 0; temp < beszallitoRaktarTermekList.getLength(); temp++) {
-                Node node2 = beszallitoRaktarTermekList.item(temp2);
-                if (node2.getNodeType() == Node.ELEMENT_NODE) {
-                    Element beszallitoRaktarElement = (Element) node2;
-                    String termekid = beszallitoRaktarElement.getAttribute("termekid");
-                    String beszallitoid = beszallitoRaktarElement.getAttribute("beszallitoid");
-                    String nev = beszallitoRaktarElement.getElementsByTagName("Nev").item(0).getTextContent();
-                    String darabszam = beszallitoRaktarElement.getElementsByTagName("Darabszam").item(0)
-                            .getTextContent();
-                    String kategoria = beszallitoRaktarElement.getElementsByTagName("Kategoria").item(0)
-                            .getTextContent();
-
-                    printToFileAndConsole(
-                            "        <Beszallito_Raktar_Termek beszallitoid=\"" + beszallitoid + "\" termekid=\""
-                                    + termekid + "\">",
-                            System.out, file);
-                    printElement("Nev", nev, file);
-                    printElement("Darabszam", darabszam, file);
-                    printElement("Kategoria", kategoria, file);
-                    printToFileAndConsole("       </Beszallito_Raktar_Termek>", System.out, file);
-                }
-            }
-            printToFileAndConsole("  </Raktarak>", System.out, file);
         }
+
+        for (int temp2 = 0; temp2 < beszallitoRaktarTermekList.getLength(); temp2++) {
+            Node node2 = beszallitoRaktarTermekList.item(temp2);
+            if (node2.getNodeType() == Node.ELEMENT_NODE) {
+                Element beszallitoRaktarElement = (Element) node2;
+                String termekid = beszallitoRaktarElement.getAttribute("termekid");
+                String beszallitoid = beszallitoRaktarElement.getAttribute("beszallitoid");
+                String nev = beszallitoRaktarElement.getElementsByTagName("Nev").item(0).getTextContent();
+                String darabszam = beszallitoRaktarElement.getElementsByTagName("Darabszam").item(0)
+                        .getTextContent();
+                String kategoria = beszallitoRaktarElement.getElementsByTagName("Kategoria").item(0)
+                        .getTextContent();
+
+                printToFileAndConsole(
+                        "        <Beszallito_Raktar_Termek beszallitoid=\"" + beszallitoid + "\" termekid=\""
+                                + termekid + "\">",
+                        System.out, file);
+                printElement("Nev", nev, file);
+                printElement("Darabszam", darabszam, file);
+                printElement("Kategoria", kategoria, file);
+                printToFileAndConsole("       </Beszallito_Raktar_Termek>", System.out, file);
+            }
+        }
+        printToFileAndConsole("  </Raktarak>", System.out, file);
+
     }
 
     // Akciós termékeket beolvasó metódus

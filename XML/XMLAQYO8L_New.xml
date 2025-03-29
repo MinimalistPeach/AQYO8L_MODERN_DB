@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Aruhaz-beszallito_AQYO8L xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="XMLSchemaAQYO8L.xsd">
+  <Aruhazak>
+        <Aruhaz aruhazid="1">
+            <Nev>Coop</Nev>
+            <Cim>
+               <Iranyitoszam>3534</Iranyitoszam>
+               <Telepules>Miskolc</Telepules>
+               <Utca>Szentpáli u</Utca>
+               <Hazszam>1</Hazszam>
+            </Cim>
+        </Aruhaz>
+        <Aruhaz aruhazid="2">
+            <Nev>Tesco</Nev>
+            <Cim>
+               <Iranyitoszam>3535</Iranyitoszam>
+               <Telepules>Miskolc</Telepules>
+               <Utca>Példa u</Utca>
+               <Hazszam>2</Hazszam>
+            </Cim>
+        </Aruhaz>
+        <Aruhaz aruhazid="3">
+            <Nev>Auchan</Nev>
+            <Cim>
+               <Iranyitoszam>1001</Iranyitoszam>
+               <Telepules>Budapest</Telepules>
+               <Utca>Mint u</Utca>
+               <Hazszam>3</Hazszam>
+            </Cim>
+        </Aruhaz>
+        <Aruhaz aruhazid="4">
+            <Nev>Spar</Nev>
+            <Cim>
+               <Iranyitoszam>2345</Iranyitoszam>
+               <Telepules>Székesfehérvár</Telepules>
+               <Utca>Próba u</Utca>
+               <Hazszam>4</Hazszam>
+            </Cim>
+        </Aruhaz>
+        <Aruhaz aruhazid="5">
+            <Nev>Lidl</Nev>
+            <Cim>
+               <Iranyitoszam>9876</Iranyitoszam>
+               <Telepules>Szendrő</Telepules>
+               <Utca>Teszt u</Utca>
+               <Hazszam>5</Hazszam>
+            </Cim>
+        </Aruhaz>
+   </Aruhazak>
+  <Beszallitok>
+        <Beszallito beszallitoid="1">
+            <Nev>Kaja futár</Nev>
+            <Termek_kategoria>Élelmiszer</Termek_kategoria>
+            <Atlagos_szallitasi_ido mertekegyseg="nap">2</Atlagos_szallitasi_ido>
+        </Beszallito>
+        <Beszallito beszallitoid="2">
+            <Nev>Szomjoltó</Nev>
+            <Termek_kategoria>Üdítő</Termek_kategoria>
+            <Atlagos_szallitasi_ido mertekegyseg="nap">1</Atlagos_szallitasi_ido>
+        </Beszallito>
+        <Beszallito beszallitoid="3">
+            <Nev>Szomjoltó 2</Nev>
+            <Termek_kategoria>Üdítő</Termek_kategoria>
+            <Atlagos_szallitasi_ido mertekegyseg="nap">1</Atlagos_szallitasi_ido>
+        </Beszallito>
+        <Beszallito beszallitoid="4">
+            <Nev>Adalék-élelmiszer</Nev>
+            <Termek_kategoria>Élelmiszer</Termek_kategoria>
+            <Atlagos_szallitasi_ido mertekegyseg="nap">2</Atlagos_szallitasi_ido>
+        </Beszallito>
+        <Beszallito beszallitoid="5">
+            <Nev>Csokitanya</Nev>
+            <Termek_kategoria>Élelmiszer</Termek_kategoria>
+            <Atlagos_szallitasi_ido mertekegyseg="nap">3</Atlagos_szallitasi_ido>
+        </Beszallito>
+    </Beszallitok>
+       <Aruhaz-Beszallito aruhazid="1" beszallitoid="1">
+            <Atlagos_Rendelt_Arumennyiseg>125</Atlagos_Rendelt_Arumennyiseg>
+       </Aruhaz-Beszallito>
+       <Aruhaz-Beszallito aruhazid="2" beszallitoid="1">
+            <Atlagos_Rendelt_Arumennyiseg>200</Atlagos_Rendelt_Arumennyiseg>
+       </Aruhaz-Beszallito>
+       <Aruhaz-Beszallito aruhazid="3" beszallitoid="2">
+            <Atlagos_Rendelt_Arumennyiseg>100</Atlagos_Rendelt_Arumennyiseg>
+       </Aruhaz-Beszallito>
+       <Aruhaz-Beszallito aruhazid="4" beszallitoid="3">
+            <Atlagos_Rendelt_Arumennyiseg>20</Atlagos_Rendelt_Arumennyiseg>
+       </Aruhaz-Beszallito>
+       <Aruhaz-Beszallito aruhazid="5" beszallitoid="3">
+            <Atlagos_Rendelt_Arumennyiseg>300</Atlagos_Rendelt_Arumennyiseg>
+       </Aruhaz-Beszallito>
+  <Raktarak>
+        <Aruhaz_Raktar_Termek aruhazid="1" termekid="1">
+            <Nev>Nescafe</Nev>
+            <Darabszam>100</Darabszam>
+            <Kategoria>Kávé</Kategoria>
+            <Ar penznem="huf">1000</Ar>
+       </Aruhaz_Raktar_Termek>
+        <Aruhaz_Raktar_Termek aruhazid="1" termekid="2">
+            <Nev>Coca-Cola</Nev>
+            <Darabszam>100</Darabszam>
+            <Kategoria>Üdítő</Kategoria>
+            <Ar penznem="huf">500</Ar>
+       </Aruhaz_Raktar_Termek>
+        <Aruhaz_Raktar_Termek aruhazid="2" termekid="3">
+            <Nev>Pepsi</Nev>
+            <Darabszam>100</Darabszam>
+            <Kategoria>Üdítő</Kategoria>
+            <Ar penznem="huf">500</Ar>
+       </Aruhaz_Raktar_Termek>
+        <Aruhaz_Raktar_Termek aruhazid="3" termekid="4">
+            <Nev>Hellmann's</Nev>
+            <Darabszam>100</Darabszam>
+            <Kategoria>Élelmiszer</Kategoria>
+            <Ar penznem="huf">1000</Ar>
+       </Aruhaz_Raktar_Termek>
+        <Aruhaz_Raktar_Termek aruhazid="3" termekid="5">
+            <Nev>Mars</Nev>
+            <Darabszam>100</Darabszam>
+            <Kategoria>Élelmiszer</Kategoria>
+            <Ar penznem="huf">500</Ar>
+       </Aruhaz_Raktar_Termek>
+        <Beszallito_Raktar_Termek beszallitoid="1" termekid="1">
+            <Nev>Nescafe</Nev>
+            <Darabszam>178</Darabszam>
+            <Kategoria>Kávé</Kategoria>
+       </Beszallito_Raktar_Termek>
+        <Beszallito_Raktar_Termek beszallitoid="2" termekid="2">
+            <Nev>Coca-Cola</Nev>
+            <Darabszam>21</Darabszam>
+            <Kategoria>Üdítő</Kategoria>
+       </Beszallito_Raktar_Termek>
+        <Beszallito_Raktar_Termek beszallitoid="3" termekid="3">
+            <Nev>Pepsi</Nev>
+            <Darabszam>76</Darabszam>
+            <Kategoria>Üdítő</Kategoria>
+       </Beszallito_Raktar_Termek>
+        <Beszallito_Raktar_Termek beszallitoid="4" termekid="4">
+            <Nev>Hellmann's</Nev>
+            <Darabszam>134</Darabszam>
+            <Kategoria>Élelmiszer</Kategoria>
+       </Beszallito_Raktar_Termek>
+        <Beszallito_Raktar_Termek beszallitoid="5" termekid="5">
+            <Nev>Mars</Nev>
+            <Darabszam>200</Darabszam>
+            <Kategoria>Élelmiszer</Kategoria>
+       </Beszallito_Raktar_Termek>
+  </Raktarak>
+  <Akcios_Termekek>
+        <Akcios_Termek termekid="1" akciostermekid="1">
+            <Nev>Nescafe</Nev>
+            <Leiras>Finom, lágy és krémes: Ez a mi kávénk! Nescafe</Leiras>
+            <Kategoria>Kávé</Kategoria>
+            <Arak>
+                <Eredeti_ar penznem="eu">3</Eredeti_ar>
+                <Eredeti_ar penznem="huf">1000</Eredeti_ar>
+                <Akcios_ar penznem="eu">1.5</Akcios_ar>
+                <Akcios_ar penznem="huf">500</Akcios_ar>
+            </Arak>
+       </Akcios_Termek>
+        <Akcios_Termek termekid="2" akciostermekid="2">
+            <Nev>Coca-Cola</Nev>
+            <Leiras>A Coca-Cola egy szénsavas üdítőital, amelyet a Coca-Cola Company gyárt.</Leiras>
+            <Kategoria>Üdítő</Kategoria>
+            <Arak>
+                <Eredeti_ar penznem="eu">1.5</Eredeti_ar>
+                <Eredeti_ar penznem="huf">500</Eredeti_ar>
+                <Akcios_ar penznem="eu">0.75</Akcios_ar>
+                <Akcios_ar penznem="huf">250</Akcios_ar>
+            </Arak>
+       </Akcios_Termek>
+        <Akcios_Termek termekid="3" akciostermekid="3">
+            <Nev>Pepsi</Nev>
+            <Leiras>A Pepsi egy szénsavas üdítőital, amelyet a PepsiCo gyárt.</Leiras>
+            <Kategoria>Üdítő</Kategoria>
+            <Arak>
+                <Eredeti_ar penznem="eu">1.5</Eredeti_ar>
+                <Eredeti_ar penznem="huf">500</Eredeti_ar>
+                <Akcios_ar penznem="eu">0.75</Akcios_ar>
+                <Akcios_ar penznem="huf">250</Akcios_ar>
+            </Arak>
+       </Akcios_Termek>
+  </Akcios_Termekek>
+</Aruhaz-beszallito_AQYO8L>

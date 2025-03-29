@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Aruhaz-beszallito_AQYO8L xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XMLSchemaAQYO8L.xsd">
+    <Aruhazak>
+        <Aruhaz aruhazid="1">
+            <Nev>Tesco</Nev>
+            <Cim>
+               <Iranyitoszam>3544</Iranyitoszam>
+               <Telepules>Miskolc</Telepules>
+               <Utca>Karakter utca</Utca>
+             <Hazszam>12</Hazszam>
+                </Cim>
+        </Aruhaz>
+        <Aruhaz aruhazid="2">
+            <Nev>Auchan</Nev>
+            <Cim>
+               <Iranyitoszam>1138</Iranyitoszam>
+               <Telepules>Budapest</Telepules>
+               <Utca>Lehel utca</Utca>
+             <Hazszam>5</Hazszam>
+                </Cim>
+        </Aruhaz>
+        <Aruhaz aruhazid="3">
+            <Nev>Spar</Nev>
+            <Cim>
+               <Iranyitoszam>6722</Iranyitoszam>
+               <Telepules>Szeged</Telepules>
+               <Utca>Arany János utca</Utca>
+             <Hazszam>3</Hazszam>
+                </Cim>
+        </Aruhaz>
+    </Aruhazak>
+    <Beszallitok>
+        <Beszallito beszallitoid="1">
+            <Nev>Kerékroncs KFT.</Nev>
+            <Termek_kategoria>Gépjármű alkatrész</Termek_kategoria>
+            <Atlagos_szallitasi_ido mertekegyseg="perc">48</Atlagos_szallitasi_ido>
+        </Beszallito>
+        <Beszallito beszallitoid="2">
+            <Nev>Építőanyag KFT.</Nev>
+            <Termek_kategoria>Építőanyag</Termek_kategoria>
+            <Atlagos_szallitasi_ido mertekegyseg="ora">2</Atlagos_szallitasi_ido>
+        </Beszallito>
+        <Beszallito beszallitoid="3">
+            <Nev>Elektronikai KFT.</Nev>
+            <Termek_kategoria>Elektronika</Termek_kategoria>
+            <Atlagos_szallitasi_ido mertekegyseg="ora">5</Atlagos_szallitasi_ido>
+        </Beszallito>
+     </Beszallitok>
+     <Aruhaz-Beszallito aruhazid="1" beszallitoid="2">
+          <Atlagos_Rendelt_Arumennyiseg>2</Atlagos_Rendelt_Arumennyiseg>
+     </Aruhaz-Beszallito>
+     <Aruhaz-Beszallito aruhazid="2" beszallitoid="3">
+          <Atlagos_Rendelt_Arumennyiseg>15</Atlagos_Rendelt_Arumennyiseg>
+     </Aruhaz-Beszallito>
+     <Aruhaz-Beszallito aruhazid="3" beszallitoid="1">
+          <Atlagos_Rendelt_Arumennyiseg>8</Atlagos_Rendelt_Arumennyiseg>
+     </Aruhaz-Beszallito>
+  <Raktarak>
+        <Aruhaz_Raktar_Termek aruhazid="1" termekid="1">
+            <Nev>Rántotthús</Nev>
+            <Darabszam>2</Darabszam>
+            <Kategoria>Élelmiszer</Kategoria>
+            <Ar penznem="huf">1200</Ar>
+       </Aruhaz_Raktar_Termek>
+        <Aruhaz_Raktar_Termek aruhazid="1" termekid="2">
+            <Nev>Tej</Nev>
+            <Darabszam>10</Darabszam>
+            <Kategoria>Élelmiszer</Kategoria>
+            <Ar penznem="huf">300</Ar>
+       </Aruhaz_Raktar_Termek>
+        <Aruhaz_Raktar_Termek aruhazid="2" termekid="3">
+            <Nev>Asztal</Nev>
+            <Darabszam>5</Darabszam>
+            <Kategoria>Bútor</Kategoria>
+            <Ar penznem="huf">15000</Ar>
+       </Aruhaz_Raktar_Termek>
+        <Beszallito_Raktar_Termek beszallitoid="1" termekid="1">
+            <Nev>Autóalkatrész</Nev>
+            <Darabszam>50</Darabszam>
+            <Kategoria>Gépjármű alkatrész</Kategoria>
+       </Beszallito_Raktar_Termek>
+        <Beszallito_Raktar_Termek beszallitoid="2" termekid="2">
+            <Nev>Csempe</Nev>
+            <Darabszam>100</Darabszam>
+            <Kategoria>Építőanyag</Kategoria>
+       </Beszallito_Raktar_Termek>
+        <Beszallito_Raktar_Termek beszallitoid="3" termekid="3">
+            <Nev>Laptop</Nev>
+            <Darabszam>20</Darabszam>
+            <Kategoria>Elektronika</Kategoria>
+       </Beszallito_Raktar_Termek>
+  </Raktarak>
+  <Akcios_Termekek>
+        <Akcios_Termek termekid="1" akciostermekid="1">
+            <Nev>Farhát</Nev>
+            <Leiras>Finom farhát</Leiras>
+            <Kategoria>Élelmiszer</Kategoria>
+            <Arak>
+                <Eredeti_ar penznem="huf">1200.00</Eredeti_ar>
+                <Eredeti_ar penznem="eu">4.00</Eredeti_ar>
+                <Akcios_ar penznem="huf">1100.00</Akcios_ar>
+                <Akcios_ar penznem="eu">3.75</Akcios_ar>
+            </Arak>
+       </Akcios_Termek>
+        <Akcios_Termek termekid="2" akciostermekid="2">
+            <Nev>Tej</Nev>
+            <Leiras>Friss tej</Leiras>
+            <Kategoria>Élelmiszer</Kategoria>
+            <Arak>
+                <Eredeti_ar penznem="huf">300.00</Eredeti_ar>
+                <Eredeti_ar penznem="eu">1.00</Eredeti_ar>
+                <Akcios_ar penznem="huf">250.00</Akcios_ar>
+                <Akcios_ar penznem="eu">0.85</Akcios_ar>
+            </Arak>
+       </Akcios_Termek>
+        <Akcios_Termek termekid="3" akciostermekid="3">
+            <Nev>Asztal</Nev>
+            <Leiras>Igényes asztal</Leiras>
+            <Kategoria>Bútor</Kategoria>
+            <Arak>
+                <Eredeti_ar penznem="huf">15000.00</Eredeti_ar>
+                <Eredeti_ar penznem="eu">50.00</Eredeti_ar>
+                <Akcios_ar penznem="huf">12000.00</Akcios_ar>
+                <Akcios_ar penznem="eu">40.8</Akcios_ar>
+            </Arak>
+       </Akcios_Termek>
+        <Akcios_Termek termekid="4" akciostermekid="4">
+            <Nev>Autóalkatrész</Nev>
+            <Leiras>Minőségi alkatrész</Leiras>
+            <Kategoria>Gépjármű alkatrész</Kategoria>
+            <Arak>
+                <Eredeti_ar penznem="huf">5000.0</Eredeti_ar>
+                <Eredeti_ar penznem="eu">17.0</Eredeti_ar>
+                <Akcios_ar penznem="huf">4500.0</Akcios_ar>
+                <Akcios_ar penznem="eu">15.3</Akcios_ar>
+            </Arak>
+       </Akcios_Termek>
+        <Akcios_Termek termekid="5" akciostermekid="5">
+            <Nev>Csempe</Nev>
+            <Leiras>Stílusos csempe</Leiras>
+            <Kategoria>Építőanyag</Kategoria>
+            <Arak>
+                <Eredeti_ar penznem="huf">2000.0</Eredeti_ar>
+                <Eredeti_ar penznem="eu">6.8</Eredeti_ar>
+                <Akcios_ar penznem="huf">1800.0</Akcios_ar>
+                <Akcios_ar penznem="eu">6.12</Akcios_ar>
+            </Arak>
+       </Akcios_Termek>
+  </Akcios_Termekek>
+</Aruhaz-beszallito_AQYO8L>
