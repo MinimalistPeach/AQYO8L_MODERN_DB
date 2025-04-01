@@ -6,8 +6,10 @@ import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from bson.objectid import ObjectId
 from config import Config
+from flask_cors import CORS
 
 app = Flask(__name__)
+cors = CORS(app)
 app.config.from_object(Config)
 
 # MongoDB kapcsolat inicializálása
