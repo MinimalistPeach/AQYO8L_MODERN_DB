@@ -1,3 +1,4 @@
 *.class
 XML/xml_crud/target
 .vscode/
+__pycache__/
