@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Website</title>
+    <title>Blog oldal - AQYO8L</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -28,13 +28,14 @@
         </div>
 
         <div id="posts-page" class="hidden">
+            <button id="logoutButton" onclick="logout()">Kijelentkezés</button>
             <h2>Létrehozott posztjai</h2>
-            <button onclick="logout()">Kijelentkezés</button>
             <form id="post-form">
-                <input type="text" id="post-title" placeholder="Post Title" required>
-                <textarea id="post-content" placeholder="Post Content" required></textarea>
+                <input type="text" id="post-title" placeholder="Poszt cime" required>
+                <textarea id="post-content" placeholder="Poszt tartalma" required></textarea>
                 <button type="submit">Poszt hozzáadása</button>
             </form>
+
             <div id="posts-list">
                 
             </div>

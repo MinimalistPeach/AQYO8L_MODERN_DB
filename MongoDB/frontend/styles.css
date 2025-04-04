@@ -1,17 +1,12 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Poppins', sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    flex-direction: column;
+    min-height: 100vh;
+    font-size: 1.5rem;
+    background-color: #222222;
 }
 
 #auth-container {
@@ -30,9 +25,9 @@ body {
     width: 300px;
 }
 
-.auth-form input {
+input {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #ddd;
@@ -68,14 +63,17 @@ body {
 #post-form input,
 #post-form textarea {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #ddd;
 }
 
 #posts-list {
-    margin-top: 20px;
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;/
 }
 
 .post {
@@ -87,14 +85,61 @@ body {
 }
 
 button.delete-post {
-    background-color: red;
+    background-color: rgb(212, 30, 30);
     color: white;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 5px;
+
 }
 
 button.delete-post:hover {
     background-color: darkred;
+}
+
+button#logoutButton {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 50%;
+    height: 25px;
+
+}
+
+
+button {
+    appearance: button;
+    backface-visibility: hidden;
+    background-color: #405cf5;
+    border-radius: 6px;
+    border-width: 0;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, sans-serif;
+    height: 40px;
+    font-size: 75%;
+    line-height: 1.15;
+    margin: 12px 0 0;
+    outline: none;
+    overflow: hidden;
+    padding: 0 25px;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s, box-shadow .08s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-bottom: 5px;
+}
+
+
+button:focus {
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
 }

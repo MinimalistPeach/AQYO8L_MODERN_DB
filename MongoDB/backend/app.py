@@ -68,7 +68,7 @@ def create_post():
     token = request.headers.get('Authorization')
 
     if not token or not token.startswith("Bearer "):
-        return jsonify({"message": "Token is missing or invalid"}), 401
+        return jsonify({"message": "Hiányzó vagy hibás token!"}), 401
     
     token = token.split(" ")[1]
 
@@ -77,16 +77,16 @@ def create_post():
         print(f"Decoded token: {decoded_token}")
         user_id = decoded_token["user_id"]
     except jwt.ExpiredSignatureError:
-        return jsonify({"message": "Token has expired"}), 401
+        return jsonify({"message": "Lejárt a token!"}), 401
     except jwt.InvalidTokenError:
-        return jsonify({"message": "Invalid token"}), 401
+        return jsonify({"message": "Érvénytelen token!"}), 401
 
     data = request.get_json()
     title = data.get("title")
     content = data.get("content")
 
     if not title or not content:
-        return jsonify({"message": "Title and content are required"}), 400
+        return jsonify({"message": "Cim és szövegtörzs megadása kötelező!"}), 400
 
     post = {
         "user_id": ObjectId(user_id),
@@ -104,7 +104,7 @@ def get_posts():
     token = request.headers.get('Authorization')
 
     if not token or not token.startswith("Bearer "):
-        return jsonify({"message": "Token is missing or invalid"}), 401
+        return jsonify({"message": "Hiányzó vagy hibás token!"}), 401
     
     token = token.split(" ")[1]
 
@@ -112,9 +112,9 @@ def get_posts():
         decoded_token = jwt.decode(token, app.config["SECRET_KEY"], algorithms=["HS256"])
         user_id = decoded_token["user_id"]
     except jwt.ExpiredSignatureError:
-        return jsonify({"message": "Token has expired"}), 401
+        return jsonify({"message": "Lejárt a token!"}), 401
     except jwt.InvalidTokenError:
-        return jsonify({"message": "Invalid token"}), 401
+        return jsonify({"message": "Érvénytelen token!"}), 401
 
     posts = mongo.db.posts.find({"user_id": ObjectId(user_id)})
     result = []
@@ -136,16 +136,16 @@ def get_user_posts(user_name):
     token = request.headers.get('Authorization')
 
     if not token or not token.startswith("Bearer "):
-        return jsonify({"message": "Token is missing or invalid"}), 401
+        return jsonify({"message": "Hiányzó vagy hibás token!"}), 401
     
     token = token.split(" ")[1]
 
     try:
         jwt.decode(token, app.config["SECRET_KEY"], algorithms=["HS256"])
     except jwt.ExpiredSignatureError:
-        return jsonify({"message": "Token has expired"}), 401
+        return jsonify({"message": "Lejárt a token!"}), 401
     except jwt.InvalidTokenError:
-        return jsonify({"message": "Invalid token"}), 401
+        return jsonify({"message": "Érvénytelen token!"}), 401
     
     user = mongo.db.users.find_one({"username": user_name})
     if not user:
@@ -172,7 +172,7 @@ def delete_post(post_id):
     token = request.headers.get('Authorization')
 
     if not token or not token.startswith("Bearer "):
-        return jsonify({"message": "Token is missing or invalid"}), 401
+        return jsonify({"message": "Hiányzó vagy hibás token!"}), 401
     
     token = token.split(" ")[1]
 
@@ -180,9 +180,9 @@ def delete_post(post_id):
         decoded_token = jwt.decode(token, app.config["SECRET_KEY"], algorithms=["HS256"])
         user_id = decoded_token["user_id"]
     except jwt.ExpiredSignatureError:
-        return jsonify({"message": "Token has expired"}), 401
+        return jsonify({"message": "Lejárt a token!"}), 401
     except jwt.InvalidTokenError:
-        return jsonify({"message": "Invalid token"}), 401
+        return jsonify({"message": "Érvénytelen token!"}), 401
 
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id), "user_id": ObjectId(user_id)})
     if not post:
@@ -190,6 +190,60 @@ def delete_post(post_id):
 
     mongo.db.posts.delete_one({"_id": ObjectId(post_id)})
     return jsonify({"message": "Post deleted successfully"}), 200
+
+# Blog bejegyzés szerkesztése
+@app.route('/post/<post_id>', methods=['PUT'])
+def update_post(post_id):
+    token = request.headers.get('Authorization')
+
+    if not token or not token.startswith("Bearer "):
+        return jsonify({"message": "Hiányzó vagy hibás token!"}), 401
+    
+    token = token.split(" ")[1]
+
+    try:
+        decoded_token = jwt.decode(token, app.config["SECRET_KEY"], algorithms=["HS256"])
+        user_id = decoded_token["user_id"]
+    except jwt.ExpiredSignatureError:
+        return jsonify({"message": "Lejárt a token!"}), 401
+    except jwt.InvalidTokenError:
+        return jsonify({"message": "Érvénytelen token!"}), 401
+
+    data = request.get_json()
+    title = data.get("title")
+    content = data.get("content")
+
+    if not title or not content:
+        return jsonify({"message": "Cim és szövegtörzs megadása kötelező!"}), 400
+
+    post = mongo.db.posts.find_one({"_id": ObjectId(post_id), "user_id": ObjectId(user_id)})
+    
+    if not post:
+        return jsonify({"message": "Nem található poszt!"}), 404
+
+    mongo.db.posts.update_one({"_id": ObjectId(post_id)}, {"$set": {"title": title, "content": content}})
+    return jsonify({"message": "Poszt sikeresen frissitve!"}), 200
+
+
+@app.route('/tokencheck', methods=['GET'])
+def token_check():
+    token = request.headers.get('Authorization')
+
+    if not token or not token.startswith("Bearer "):
+        return jsonify({"message": "Hiányzó vagy hibás token!"}), 401
+
+    token = token.split(" ")[1]
+
+    try:
+        decoded_token = jwt.decode(token, app.config["SECRET_KEY"], algorithms=["HS256"])
+        return jsonify({"message": "Token érvényes!", "user_id": decoded_token["user_id"]}), 200
+    except jwt.ExpiredSignatureError:
+        return jsonify({"message": "Lejárt a token!"}), 401
+    except jwt.InvalidTokenError:
+        return jsonify({"message": "Érvénytelen token!"}), 401
+
+app.add_url_rule('/tokencheck', 'token_check', token_check, methods=['GET'])
+
 
 if __name__ == '__main__':
     app.run(debug=True)

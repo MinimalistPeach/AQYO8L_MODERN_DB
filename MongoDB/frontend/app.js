@@ -10,6 +10,34 @@ function showLogin() {
     document.getElementById('register-form').classList.add('hidden');
 }
 
+async function checkToken() {
+    const token = getAuthToken();
+
+    hideAuth();
+    hidePostsPage();
+
+    if (token) {
+        const response = await fetch(`${apiUrl}/tokencheck`, {
+            method: 'GET',
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+
+        if (response.ok) {
+            hideAuth();
+            showPostsPage();
+            return;
+        } else {
+            hidePostsPage();
+            showLogin();
+            return;
+        }
+    } else {
+        hidePostsPage();
+        showLogin();
+        return;
+    }
+}
+
 function hideAuth() {
     document.getElementById('auth-container').classList.add('hidden');
     document.getElementById('register-form').classList.add('hidden');
@@ -99,6 +127,26 @@ async function fetchPosts() {
     displayPosts(posts);
 }
 
+async function updatePost(postId, updatedTitle, updatedContent) {
+    const token = getAuthToken();
+
+    const response = await fetch(`${apiUrl}/post/${postId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ title: updatedTitle, content: updatedContent })
+    });
+
+    if (response.ok) {
+        fetchPosts();
+    } else {
+        const data = await response.json();
+        alert(data.message);
+    }
+}
+
 function displayPosts(posts) {
     const postsList = document.getElementById('posts-list');
     postsList.innerHTML = '';
@@ -109,7 +157,8 @@ function displayPosts(posts) {
         postDiv.innerHTML = `
             <h3>${post.title}</h3>
             <p>${post.content}</p>
-            <button class="delete-post" onclick="deletePost('${post._id}')">Delete</button>
+            <button class="delete-post" onclick="deletePost('${post._id}')">Törlés 🗑️</button>
+            <button class="edit-post" onclick="updatePost('${post._id}', prompt('Új cim:', '${post.title}'), prompt('Új szövegtörzs:', '${post.content}'))">Szerkesztés ✏️</button>
         `;
         postsList.appendChild(postDiv);
     });
@@ -161,4 +210,4 @@ function getAuthToken() {
     return tokenCookie ? tokenCookie.split('=')[1] : null;
 }
 
-showLogin();
+checkToken();
