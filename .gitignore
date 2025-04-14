@@ -2,3 +2,4 @@
 XML/xml_crud/target
 .vscode/
 __pycache__/
+*.docx
